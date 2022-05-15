@@ -1,0 +1,32 @@
+.nav {
+    display: flex;
+    flex-direction: column;
+    margin: 6px;
+    width: 25%;
+}
+
+.nav-category-item {
+    cursor: pointer;
+    width: 80%;
+    display: flex;
+    margin: 3px 0;
+    border: .5px solid rgb(185, 185, 185);
+    border-radius: .9px;
+    padding: 3px;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.icon-a {
+    top: .125em;
+    position: relative;
+}
+
+.nav input {
+    width: 80%;
+    margin-bottom: 16px;
+    border-radius: .9px;
+    padding: 3px;
+    border: .5px solid rgb(185, 185, 185);
+}
