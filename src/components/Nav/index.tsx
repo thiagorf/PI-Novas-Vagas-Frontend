@@ -1,7 +1,6 @@
 import { BiChevronDown } from "react-icons/bi"
 import "./style.css"
 
-
 export function Nav() {
 
     return (

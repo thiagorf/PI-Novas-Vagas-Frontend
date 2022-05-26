@@ -5,11 +5,14 @@
     padding: 4px;
     border-bottom: .5px solid rgb(185, 185, 185);
     box-shadow: rgba(0, 0, 0, 0.15) 0px .5px 2px;
-    background: #FFF;
+    background: #5e96ae;
 }
 
+/*94b1c4*/
 .header h1 {
     font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
 }
 
 .buttons{
@@ -19,6 +22,10 @@
 }
 
 .buttons button{
+    width: 90px;
     height: 30px;
     padding: 3px;
+    background: #FFF;
+    border: none;
+    
 }
