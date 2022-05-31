@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../hooks/useAuth";
 import { EnterpriseLoginProps } from "./enterprise-types";
 import "../../../../components/Form/style.css";
+import { FormActButton, FormInput, FormInputGroup, FormWrapper } from "../../../../components/Form";
 
 export const EnterpriseLogin = () => {
     const {
@@ -19,26 +20,25 @@ export const EnterpriseLogin = () => {
     };
 
     return (
-        <div className="form-wrapper">
-            <form onSubmit={handleSubmit(attemptEnterpriseLogin)}>
-                <div className="form-fields-group">
-                    <h2>Realizar login</h2>
-                    <div className="input-field">
-                        <label htmlFor="email">Email:</label>
-                        <input type="text" {...register("email", { required: "Email is required" })} />
-                        {errors.email && <p className="input-field-error">{errors.email.message}</p>}
-                    </div>
-                    <div className="input-field">
-                        <label htmlFor="password">Password:</label>
-                        <input type="password" {...register("password", { required: "Password is required" })} />
-                        {errors.password && <p className="input-field-error">{errors.password.message}</p>}
-                    </div>
-                    <span className="form-redirect">
-                        Don`&apos`t have an account? <Link to="/enterprise-register">Sign up</Link>
-                    </span>
-                </div>
-                <button type="submit">LOGIN</button>
-            </form>
-        </div>
+        <FormWrapper onSubmit={handleSubmit(attemptEnterpriseLogin)}>
+            <FormInputGroup>
+                <h2>Sign in</h2>
+                <FormInput
+                    label="Email"
+                    {...register("email", { required: "Email is required" })}
+                    errors={errors.email}
+                />
+                <FormInput
+                    inputType="password"
+                    label="password"
+                    {...register("password", { required: "Password is required" })}
+                    errors={errors.password}
+                />
+            </FormInputGroup>
+            <span className="form-redirect">
+                Don`&apos`t have an account? <Link to="/enterprise-register">Sign up</Link>
+            </span>
+            <FormActButton buttonLabel="LOGIN" />
+        </FormWrapper>
     );
 };

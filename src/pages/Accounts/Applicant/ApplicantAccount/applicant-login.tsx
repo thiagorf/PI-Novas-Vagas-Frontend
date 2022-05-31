@@ -1,6 +1,6 @@
+import { useAuth } from "../../../../hooks";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate, useLocation, Location } from "react-router-dom";
-import { useAuth } from "../../../../hooks/useAuth";
 import { ApplicantLoginProps } from "./applicant-types";
 import "../../../../components/Form/style.css";
 import { FormInput } from "../../../../components/Form/form-input";
@@ -39,6 +39,7 @@ export const ApplicantLogin = () => {
                     errors={errors.email}
                 />
                 <FormInput
+                    inputType="password"
                     label="Password"
                     {...register("password", { required: "Password is required" })}
                     errors={errors.password}
