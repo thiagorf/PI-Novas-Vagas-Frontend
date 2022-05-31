@@ -4,6 +4,9 @@ import { useAuth } from "../../../../hooks/useAuth";
 import { ApplicantLoginProps } from "./applicant-types";
 import "../../../../components/Form/style.css";
 import { FormInput } from "../../../../components/Form/form-input";
+import { FormWrapper } from "../../../../components/Form/form-wrapper";
+import { FormInputGroup } from "../../../../components/Form/form-input-group";
+import { FormActButton } from "../../../../components/Form/form-act-button";
 
 interface LocationRedirect extends Location {
     state: { from: { pathname: string } };
@@ -27,33 +30,24 @@ export const ApplicantLogin = () => {
     };
 
     return (
-        <div className="form-wrapper">
-            <form onSubmit={handleSubmit(attemptLogin)}>
-                <div className="form-fields-group">
-                    <h2>Realizar login</h2>
-                    <FormInput
-                        label="Email"
-                        errors={errors.email}
-                        {...register("email", { required: "Email is required" })}
-                    />
-                    {/* <div className="input-field">
-                        <label htmlFor="email">Email: </label>
-                        <input type="text" {...register("email", { required: "Email is necessary" })} />
-                        {errors.email && <p className="input-field-error">{errors.email.message}</p>}
-    </div>*/}
-                    <div className="input-field">
-                        <label htmlFor="password">Password: </label>
-                        <input type="password" {...register("password", { required: "Password is required" })} />
-                        {errors.password && <p className="input-field-error">{errors.password.message}</p>}
-                    </div>
-                    <span className="form-redirect">
-                        Don&apos;t have an account? <Link to="/applicant-register">Sign up</Link>
-                    </span>
-                </div>
-                <button className="form-act " type="submit">
-                    Login
-                </button>
-            </form>
-        </div>
+        <FormWrapper onSubmit={handleSubmit(attemptLogin)}>
+            <FormInputGroup>
+                <h2>Sign in</h2>
+                <FormInput
+                    label="Email"
+                    {...register("email", { required: "Email is required" })}
+                    errors={errors.email}
+                />
+                <FormInput
+                    label="Password"
+                    {...register("password", { required: "Password is required" })}
+                    errors={errors.password}
+                />
+            </FormInputGroup>
+            <span className="form-redirect">
+                Don&apos;t have an account? <Link to="/applicant-register">Sign up</Link>
+            </span>
+            <FormActButton buttonLabel="LOGIN" />
+        </FormWrapper>
     );
 };
