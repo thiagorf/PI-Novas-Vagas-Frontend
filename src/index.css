@@ -5,24 +5,36 @@
     font-size: 16px;
 }
 
-html, body, #root {
+html,
+body,
+#root {
     width: 100%;
     height: 100%;
-    font-family: 'Radio Canada', sans-serif;
+    font-family: "Radio Canada", sans-serif;
+}
+
+body {
+    line-height: 1.5;
 }
 
 a {
     text-decoration: none;
 }
 
-button, input {
+button,
+input {
     outline: none;
-    font-family: 'Radio Canada', sans-serif;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
 }
 
 .container {
     width: 100%;
-
 }
 
 .content-wrapper {
@@ -31,10 +43,4 @@ button, input {
     overflow: hidden;
     display: flex;
     margin: 0 6px;
-
 }
-
-
-
-
-

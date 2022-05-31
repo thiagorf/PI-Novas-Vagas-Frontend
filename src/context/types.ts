@@ -10,6 +10,7 @@ export interface AuthObject {
 export interface AuthContextProperty {
     authToken: string;
     user: AuthApplicant | AuthEnterprise;
+    signed: boolean;
     login(userInfo: AuthObject): Promise<void>;
     logout(): void;
 }

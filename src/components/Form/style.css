@@ -1,0 +1,45 @@
+.form-wrapper {
+    margin: 20px auto 0 auto;
+    width: 350px;
+    height: clamp(280px, 280px, 1fr);
+    border: 1px solid black;
+}
+
+.form-wrapper form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 0.75rem;
+}
+
+.form-wrapper h2 {
+    font-size: 2rem;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field-error {
+    color: rgb(235, 33, 33);
+    font-size: 0.75rem;
+}
+
+.form-redirect,
+.form-redirect a {
+    font-size: 0.75rem;
+}
+
+.form-act {
+    width: 100%;
+}
+
+.form-fields-group {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 1rem;
+}

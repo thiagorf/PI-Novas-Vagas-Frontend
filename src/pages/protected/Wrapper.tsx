@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { EnterpriseHeader } from "../../components/EnterpriseHeader/enterprise-header";
+import { EnterpriseHeader } from "../../components/Header/Enterprise/enterprise-header";
 import api from "../../services/api";
 
 export const Wrapper = () => {
