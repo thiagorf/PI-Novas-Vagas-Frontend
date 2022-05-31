@@ -3,11 +3,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate, useLocation, Location } from "react-router-dom";
 import { ApplicantLoginProps } from "./applicant-types";
 import "../../../../components/Form/style.css";
-import { FormInput } from "../../../../components/Form/form-input";
-import { FormWrapper } from "../../../../components/Form/form-wrapper";
-import { FormInputGroup } from "../../../../components/Form/form-input-group";
-import { FormActButton } from "../../../../components/Form/form-act-button";
-
+import { FormActButton, FormInput, FormInputGroup, FormWrapper } from "../../../../components/Form";
 interface LocationRedirect extends Location {
     state: { from: { pathname: string } };
 }

@@ -3,10 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import api from "../../../../services/api";
 import { ApplicantRegisterProps } from "./applicant-types";
 import "../../../../components/Form/style.css";
-import { FormWrapper } from "../../../../components/Form/form-wrapper";
-import { FormInputGroup } from "../../../../components/Form/form-input-group";
-import { FormActButton } from "../../../../components/Form/form-act-button";
-import { FormInput } from "../../../../components/Form/form-input";
+import { FormActButton, FormInput, FormInputGroup, FormWrapper } from "../../../../components/Form";
 
 export const ApplicantRegister = () => {
     const {
