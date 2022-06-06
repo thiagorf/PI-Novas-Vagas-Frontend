@@ -2,6 +2,9 @@
 
 ## Future features
 
+Better ui/ux design coming soon.
+> Figma reference will be provided in future releases.
+
 Subdomain for enterprise actions, informations and other things.
 
 > the actual code is tightly coupled between applicant and enterprise pages.
