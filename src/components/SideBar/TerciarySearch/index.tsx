@@ -1,2 +1,2 @@
-export * from "./side-bar-terciary-search";
+export * from "./sidebar-terciary-search";
 export * from "./date-input";

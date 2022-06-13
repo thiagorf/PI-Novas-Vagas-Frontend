@@ -13,7 +13,7 @@ export const DefaultHeader = ({ Component }: DefaultHeaderProps) => {
 
     return (
         <div className="header">
-            <h1>Novas Vagas</h1>
+            <h3>Novas Vagas</h3>
             {signed ? (
                 <Component />
             ) : (

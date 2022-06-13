@@ -5,7 +5,7 @@ interface DateInputProps {
 
 export const DateInput = ({ label, reference }: DateInputProps) => {
     return (
-        <div className="side-bar-date-input">
+        <div className="sidebar-date-input">
             <label htmlFor={reference}>{label}</label>
             <input type="date" name="date" id={reference} />
         </div>

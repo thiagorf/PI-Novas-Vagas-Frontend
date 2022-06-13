@@ -3,12 +3,12 @@ import "./style.css";
 
 export const SideBar = () => {
     return (
-        <div className="side-bar">
-            <div className="side-bar-content-wrapper">
+        <div className="sidebar">
+            <div className="sidebar-content-wrapper">
                 <SideBarPrimarySearch />
                 <SideBarSecondarySearch />
                 <SideBarTerciarySearch />
-                <button className="side-bar-cta">Pesquisar</button>
+                <button className="sidebar-cta">Pesquisar</button>
             </div>
         </div>
     );

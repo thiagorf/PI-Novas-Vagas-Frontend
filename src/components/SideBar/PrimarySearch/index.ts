@@ -1,3 +1,3 @@
-export * from "./side-bar-search-input";
-export * from "./side-bar-select";
-export * from "./side-bar-primary-search";
+export * from "./sidebar-search-input";
+export * from "./sidebar-select";
+export * from "./sidebar-primary-search";

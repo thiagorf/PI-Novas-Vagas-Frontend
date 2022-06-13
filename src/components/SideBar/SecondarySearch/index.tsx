@@ -1,1 +1,1 @@
-export * from "./side-bar-secondary-search";
+export * from "./sidebar-secondary-search";
