@@ -2,7 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0px 14px 0px;
+    min-height: 57px;
+    height: 8%;
+    /*14*/
+    margin: 0 0px 0px 0px;
     padding: 4px;
     border-bottom: 0.5px solid rgb(185, 185, 185);
     box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5px 2px;

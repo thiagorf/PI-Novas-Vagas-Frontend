@@ -43,3 +43,11 @@
     gap: 3px;
     margin-bottom: 1rem;
 }
+
+.basic-input input {
+    width: 100%;
+    height: 37px;
+    border: 1px solid var(--auxiliary-color);
+    border-radius: 7px;
+    padding-left: 11px;
+}

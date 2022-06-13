@@ -1,3 +1,9 @@
+:root {
+    --base-color: #262626;
+    --auxiliary-color: #434343;
+    --brand-color: #e2de6b;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +16,8 @@ body,
 #root {
     width: 100%;
     height: 100%;
-    font-family: "Radio Canada", sans-serif;
+    font-family: "Roboto", sans-serif;
+    color: var(--base-color);
 }
 
 body {
@@ -33,13 +40,31 @@ select {
     font: inherit;
 }
 
+h1 {
+    font-size: 2.25rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.1875rem;
+}
+
 .container {
     width: 100%;
+    height: 100%;
 }
 
 .content-wrapper {
     min-height: 300px;
     width: 100%;
+    height: 92%;
     overflow: hidden;
     display: flex;
     margin: 0 6px;
