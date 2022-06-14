@@ -6,7 +6,7 @@
 
 .sidebar-content-wrapper {
     width: 317px;
-    margin: 0 auto;
+    margin: 85px auto 0 auto;
 }
 
 .sidebar-input-wrapper {
@@ -81,12 +81,15 @@
 .sidebar-date-input {
     display: flex;
     flex-direction: column;
+    width: 142px;
 }
 
-.sidebar-date-input input {
+.sidebar-date-input input[type="date"] {
     border: 1px solid var(--auxiliary-color);
     border-radius: 4px;
     height: 36px;
+    padding-left: 4px;
+    font-weight: 300;
 }
 
 .sidebar-cta {
