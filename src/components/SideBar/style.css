@@ -97,3 +97,21 @@
     background-color: var(--brand-color);
     font-weight: bold;
 }
+
+.sidebar-group {
+    margin-bottom: 42px;
+}
+
+.sidebar-content-wrapper > .sidebar-group:last-of-type {
+    margin-bottom: 30px;
+}
+
+.sidebar-group:not(:first-child) h4 {
+    margin-bottom: 8px;
+}
+
+#primary-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
