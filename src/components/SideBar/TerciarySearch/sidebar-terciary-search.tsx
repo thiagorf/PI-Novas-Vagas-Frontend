@@ -1,4 +1,5 @@
 import { DateInput } from ".";
+import "./style.css";
 
 export const SideBarTerciarySearch = () => {
     return (

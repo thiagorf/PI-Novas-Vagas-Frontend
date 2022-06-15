@@ -1,0 +1,18 @@
+.sidebar-date-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar-date-input {
+    display: flex;
+    flex-direction: column;
+    width: 142px;
+}
+
+.sidebar-date-input input[type="date"] {
+    border: 1px solid var(--auxiliary-color);
+    border-radius: 4px;
+    height: 36px;
+    padding-left: 4px;
+    font-weight: 300;
+}

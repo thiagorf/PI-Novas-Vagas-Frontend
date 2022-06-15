@@ -1,4 +1,5 @@
 import { RiSearchLine } from "react-icons/ri";
+import "./style.css";
 
 export const SideBarSearchInput = () => {
     return (
