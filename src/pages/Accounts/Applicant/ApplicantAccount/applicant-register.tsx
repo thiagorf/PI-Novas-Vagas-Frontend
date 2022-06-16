@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import api from "../../../../services/api";
 import { ApplicantRegisterProps } from "./applicant-types";
 import "../../../../components/Form/style.css";
-import { FormActButton, FormInput, FormInputGroup, FormWrapper } from "../../../../components/Form";
+import { FileInput, FormActButton, FormInput, FormInputGroup, FormWrapper } from "../../../../components/Form";
 
 export const ApplicantRegister = () => {
     const {
@@ -22,7 +22,8 @@ export const ApplicantRegister = () => {
     return (
         <FormWrapper onSubmit={handleSubmit(attemptRegister)}>
             <FormInputGroup>
-                <h2>Register an account</h2>
+                <h1>Criar uma conta</h1>
+                <FileInput />
                 <FormInput label="name" {...register("name", { required: "Name is required" })} errors={errors.name} />
                 <FormInput
                     label="email"
@@ -45,10 +46,11 @@ export const ApplicantRegister = () => {
                     {...register("curriculum", { required: "Curriculum is required" })}
                     errors={errors.curriculum}
                 />
+
+                <span className="form-redirect">
+                    Already have an account?<Link to="/applicant-login">Sign In</Link>
+                </span>
             </FormInputGroup>
-            <span className="form-redirect">
-                Already have an account?<Link to="/applicant-login">Sign In</Link>
-            </span>
             <FormActButton buttonLabel="REGISTER" />
         </FormWrapper>
     );
