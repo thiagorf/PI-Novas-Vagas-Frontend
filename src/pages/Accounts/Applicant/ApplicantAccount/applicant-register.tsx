@@ -1,7 +1,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { ApplicantRegisterProps } from "./applicant-types";
-import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri";
 import {
     FileInput,
     FormActButton,
@@ -9,10 +8,12 @@ import {
     FormInputGroup,
     FormSteps,
     FormWrapper,
+    PrevButton,
 } from "../../../../components/Form";
 import { useFormSteps } from "../../../../hooks/useFormSteps";
 import api from "../../../../services/api";
 import "../../../../components/Form/style.css";
+import { NextButton } from "../../../../components/Form/Steps/next-button";
 
 export const ApplicantRegister = () => {
     const {
@@ -45,17 +46,11 @@ export const ApplicantRegister = () => {
                         <span className="form-redirect">
                             Já tem uma conta?<Link to="/applicant-login">Fazer login</Link>
                         </span>
-                        <button onClick={handleNextStep} type="button" className="next-button">
-                            <span>Próximo</span>
-                            <RiArrowRightLine size={16} className="right-icon-align" />
-                        </button>
+                        <NextButton handleNextStep={handleNextStep} />
                     </>
 
                     <>
-                        <button onClick={handlePrevStep} type="button" className="prev-button">
-                            <RiArrowLeftLine size={16} className="left-icon-align" />
-                            <span>Voltar</span>
-                        </button>
+                        <PrevButton handlePrevStep={handlePrevStep} />
                         <FormInput
                             label="email"
                             {...register("email", { required: "Email is required" })}

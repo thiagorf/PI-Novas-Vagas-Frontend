@@ -22,7 +22,7 @@ export const EnterpriseLogin = () => {
     return (
         <FormWrapper onSubmit={handleSubmit(attemptEnterpriseLogin)}>
             <FormInputGroup>
-                <h2>Sign in</h2>
+                <h1>Sign in</h1>
                 <FormInput
                     label="Email"
                     {...register("email", { required: "Email is required" })}
@@ -34,11 +34,11 @@ export const EnterpriseLogin = () => {
                     {...register("password", { required: "Password is required" })}
                     errors={errors.password}
                 />
+                <span className="form-redirect">
+                    Não tem uma conta? <Link to="/enterprise-register">Cadastre-se</Link>
+                </span>
             </FormInputGroup>
-            <span className="form-redirect">
-                Don`&apos`t have an account? <Link to="/enterprise-register">Sign up</Link>
-            </span>
-            <FormActButton buttonLabel="LOGIN" />
+            <FormActButton buttonLabel="Login" />
         </FormWrapper>
     );
 };
