@@ -1,29 +1,18 @@
 import { useState } from "react";
 
-interface StepsInit {
-    stepQty: number;
-}
-
 interface useFormStepsReturns {
     steps: number;
     handleNextStep: () => void;
     handlePrevStep: () => void;
-    showStepContent: (intendedStep: number) => boolean;
+    setQuantity: (stepsLength: number) => void;
 }
 
-export const useFormSteps = ({ stepQty }: StepsInit): useFormStepsReturns => {
-    const [steps, setSteps] = useState(1);
-
-    const showStepContent = (intendedStep: number) => {
-        if (intendedStep === steps) {
-            return true;
-        }
-
-        return false;
-    };
+export const useFormSteps = (): useFormStepsReturns => {
+    const [steps, setSteps] = useState(0);
+    const [stepsQuantity, setStepsQuantity] = useState(0);
 
     const handleNextStep = () => {
-        if (steps + 1 > stepQty) {
+        if (steps + 1 > stepsQuantity) {
             return;
         }
 
@@ -31,12 +20,16 @@ export const useFormSteps = ({ stepQty }: StepsInit): useFormStepsReturns => {
     };
 
     const handlePrevStep = () => {
-        if (steps - 1 === 0) {
+        if (steps - 1 < 0) {
             return;
         }
 
         setSteps((prev) => prev - 1);
     };
 
-    return { steps, handleNextStep, handlePrevStep, showStepContent };
+    const setQuantity = (stepsLength: number) => {
+        setStepsQuantity(stepsLength);
+    };
+
+    return { steps, handleNextStep, handlePrevStep, setQuantity };
 };
