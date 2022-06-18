@@ -1,0 +1,41 @@
+.next-button,
+.prev-button {
+    height: 41px;
+    width: 122px;
+    background-color: var(--brand-color);
+    border: 1px solid var(--auxiliary-color);
+    border-radius: 4px;
+}
+
+.prev-button {
+    margin-bottom: 37px;
+}
+
+.next-button {
+    align-self: flex-end;
+
+    margin-top: 40px;
+}
+
+.next-button svg {
+    margin-left: 3px;
+}
+
+.next-button span,
+.prev-button span,
+.left-icon-align,
+.right-icon-align {
+    vertical-align: middle;
+}
+
+.left-icon-align {
+    margin-right: 3px;
+}
+
+.right-icon-align {
+    margin-left: 3px;
+}
+
+.last-input-field {
+    margin-bottom: 33px;
+}

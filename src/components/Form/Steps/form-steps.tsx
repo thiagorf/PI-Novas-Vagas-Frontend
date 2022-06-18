@@ -1,4 +1,5 @@
 import React, { Children, useEffect } from "react";
+import "./style.css";
 
 interface FormStepsControl {
     children: React.ReactNode;

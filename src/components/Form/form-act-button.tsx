@@ -1,12 +1,12 @@
 import "./style.css";
 
-interface ButtonProps {
+interface ButtonProps extends React.ComponentProps<"button"> {
     buttonLabel: string;
 }
 
-export const FormActButton = ({ buttonLabel }: ButtonProps) => {
+export const FormActButton = ({ buttonLabel, ...buttonProps }: ButtonProps) => {
     return (
-        <button className="form-act" type="submit">
+        <button className="form-act" type="submit" {...buttonProps}>
             {buttonLabel}
         </button>
     );

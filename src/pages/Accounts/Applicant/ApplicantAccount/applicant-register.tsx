@@ -1,11 +1,18 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import api from "../../../../services/api";
 import { ApplicantRegisterProps } from "./applicant-types";
-import "../../../../components/Form/style.css";
-import { FileInput, FormActButton, FormInput, FormInputGroup, FormWrapper } from "../../../../components/Form";
+import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri";
+import {
+    FileInput,
+    FormActButton,
+    FormInput,
+    FormInputGroup,
+    FormSteps,
+    FormWrapper,
+} from "../../../../components/Form";
 import { useFormSteps } from "../../../../hooks/useFormSteps";
-import { FormSteps } from "../../../../components/Form/form-steps";
+import api from "../../../../services/api";
+import "../../../../components/Form/style.css";
 
 export const ApplicantRegister = () => {
     const {
@@ -36,16 +43,18 @@ export const ApplicantRegister = () => {
                             errors={errors.name}
                         />
                         <span className="form-redirect">
-                            Already have an account?<Link to="/applicant-login">Sign In</Link>
+                            Já tem uma conta?<Link to="/applicant-login">Fazer login</Link>
                         </span>
-                        <button onClick={handleNextStep} type="button">
-                            Proximo
+                        <button onClick={handleNextStep} type="button" className="next-button">
+                            <span>Próximo</span>
+                            <RiArrowRightLine size={16} className="right-icon-align" />
                         </button>
                     </>
 
                     <>
-                        <button onClick={handlePrevStep} type="button">
-                            Voltar
+                        <button onClick={handlePrevStep} type="button" className="prev-button">
+                            <RiArrowLeftLine size={16} className="left-icon-align" />
+                            <span>Voltar</span>
                         </button>
                         <FormInput
                             label="email"
@@ -69,7 +78,7 @@ export const ApplicantRegister = () => {
                             errors={errors.curriculum}
                         />
 
-                        <FormActButton buttonLabel="REGISTER" />
+                        <FormActButton buttonLabel="Criar Conta" />
                     </>
                 </FormSteps>
             </FormInputGroup>
