@@ -2,7 +2,8 @@ import { useMutation, useQuery } from "react-query";
 import api from "../../../services/api";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../../../hooks/useAuth";
-
+import { SideBarWrapper } from "../../SideBar";
+import { ContentWrapper } from "../ContentList";
 export const UniqueContent = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -42,9 +43,14 @@ export const UniqueContent = () => {
     }
 
     return (
-        <div>
-            {JSON.stringify(data)}
-            <button onClick={applyToAJob}>apply</button>
-        </div>
+        <>
+            <SideBarWrapper>dsa</SideBarWrapper>
+            <ContentWrapper>
+                <div>
+                    {JSON.stringify(data)}
+                    <button onClick={applyToAJob}>apply</button>
+                </div>
+            </ContentWrapper>
+        </>
     );
 };
