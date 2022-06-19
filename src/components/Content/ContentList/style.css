@@ -1,55 +1,88 @@
 .content {
-    width: 75%;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(160px, 1fr));
-    grid-auto-rows: 140px;
-    gap: 6px;
-    margin: 6px;
-    
+    width: 1033px;
 }
 
-.content-card {
+.jobs-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 258px);
+    column-gap: 40px;
+    row-gap: 33px;
+    width: 852px;
+    margin: 85px auto 0 auto;
+}
+
+.job-card {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 4%;
-    /*verifcar se usa 4px ou 0.9px*/
-    border-radius: .9px;
-    border: .5px solid rgb(185, 185, 185);
-    box-shadow: rgba(0, 0, 0, 0.15) 0px .5px 2px;
+    height: 269px;
     cursor: pointer;
-    transition: box-shadow 0.3s;
-    
 }
 
-.content-card:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 1.5px 2px 6px 0.5px;
+.job-card h4 {
+    height: 23px;
+    margin-bottom: -4px;
 }
 
-.content-card:active {
-    box-shadow:  rgba(0, 0, 0, 0.35) .75px 1px 3px 0.25px;
+.job-card p span {
+    font-size: 14px;
+    color: var(--auxiliary-color);
 }
 
-.card-items {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 6px;
+.job-card > p {
+    margin-bottom: 13px;
 }
 
-
-.content-card h3 {
-    font-size: 1.25em;
-    margin-bottom: 17px;
+.job-subtitle {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: var(--auxiliary-color);
 }
 
-.content-card span {
-    font-size: 1em;
+/*
+Inconsistent
+[data-title]:hover::before {
+    content: attr(data-title);
+    position: absolute;
+    z-index: 999;
+    background: var(--auxiliary-color);
+    color: #fff;
+    top: 16px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+*/
+
+.job-date {
+    font-size: 12px !important;
+    font-weight: 400;
+    line-height: 14px;
+    color: var(--auxiliary-color);
 }
 
-.content-align {
-    margin-left: 10px;
+.job-description {
+    height: 171px;
+    line-height: 19px;
+    margin-bottom: -6px;
+    text-align: justify;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 9;
+    -webkit-box-orient: vertical;
 }
 
-.content-card p {
-    font-size: 1em;
+.job-cta {
+    align-self: flex-end;
+    width: 64px;
+    background-color: #fff;
+    border: none;
+    border-bottom: 4.5px solid var(--brand-color);
+    line-height: 13px;
+    transition: width 0.5s;
+}
+
+.job-card:hover .job-cta {
+    width: 74px;
 }

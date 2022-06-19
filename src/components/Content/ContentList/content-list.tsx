@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import "./style.css";
 import api from "../../../services/api";
 import { JobsData } from "../../../types";
 import { ContentItem } from "./content-item";
+import "./style.css";
 
 export const ContentList = () => {
     const [jobs, setJobs] = useState<JobsData[]>([]);
@@ -17,10 +17,12 @@ export const ContentList = () => {
     }, []);
 
     return (
-        <>
-            {jobs.map((job) => (
-                <ContentItem {...job} key={job.id} />
-            ))}
-        </>
+        <div className="content">
+            <div className="jobs-wrapper">
+                {jobs.map((job) => (
+                    <ContentItem {...job} key={job.id} />
+                ))}
+            </div>
+        </div>
     );
 };
