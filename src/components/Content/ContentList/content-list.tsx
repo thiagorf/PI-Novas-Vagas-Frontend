@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import api from "../../../services/api";
+import { ContentItem, ContentWrapper } from ".";
 import { JobsData } from "../../../types";
-import { ContentItem } from "./content-item";
+import api from "../../../services/api";
 import "./style.css";
 
 export const ContentList = () => {
@@ -17,12 +17,10 @@ export const ContentList = () => {
     }, []);
 
     return (
-        <div className="content">
-            <div className="jobs-wrapper">
-                {jobs.map((job) => (
-                    <ContentItem {...job} key={job.id} />
-                ))}
-            </div>
-        </div>
+        <ContentWrapper>
+            {jobs.map((job) => (
+                <ContentItem {...job} key={job.id} />
+            ))}
+        </ContentWrapper>
     );
 };
