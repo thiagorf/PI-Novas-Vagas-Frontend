@@ -1,3 +1,3 @@
 export * from "./content-list";
 export * from "./content-item";
-export * from "./content-wrapper";
+export * from "./Wrapper";

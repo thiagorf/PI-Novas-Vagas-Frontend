@@ -18,9 +18,11 @@ export const ContentList = () => {
 
     return (
         <ContentWrapper>
-            {jobs.map((job) => (
-                <ContentItem {...job} key={job.id} />
-            ))}
+            <div className="jobs-wrapper">
+                {jobs.map((job) => (
+                    <ContentItem {...job} key={job.id} />
+                ))}
+            </div>
         </ContentWrapper>
     );
 };
