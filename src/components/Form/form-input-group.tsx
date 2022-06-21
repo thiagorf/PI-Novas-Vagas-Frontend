@@ -1,10 +1,6 @@
 import React from "react";
 import "./style.css";
 
-interface FormInputGroupProps {
-    children: React.ReactNode;
-}
-
-export const FormInputGroup = ({ children }: FormInputGroupProps) => {
+export const FormInputGroup = ({ children }: { children: React.ReactNode }) => {
     return <div className="form-fields-group">{children}</div>;
 };
