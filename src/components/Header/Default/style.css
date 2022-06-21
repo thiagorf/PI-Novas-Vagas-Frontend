@@ -17,6 +17,10 @@
     font-weight: 400;
 }
 
+.header h3 {
+    cursor: pointer;
+}
+
 .actions-group {
     display: flex;
     flex-direction: column;
