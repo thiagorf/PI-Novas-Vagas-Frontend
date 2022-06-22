@@ -1,6 +1,6 @@
 import { DefaultHeader } from "../Default";
-import { ApplicantHeaderOptions } from "./applicant-header-options";
+import { ApplicantOptions } from "./applicant-options";
 
 export const CommonHeader = () => {
-    return <DefaultHeader Component={ApplicantHeaderOptions} />;
+    return <DefaultHeader Component={ApplicantOptions} />;
 };

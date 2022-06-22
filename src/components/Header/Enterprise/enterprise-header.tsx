@@ -1,6 +1,6 @@
 import { DefaultHeader } from "../Default";
-import { EnterpriseHeaderOptions } from "./enterprise-header-options";
+import { EnterpriseOptions } from "./enterprise-options";
 
 export const EnterpriseHeader = () => {
-    return <DefaultHeader Component={EnterpriseHeaderOptions} />;
+    return <DefaultHeader Component={EnterpriseOptions} />;
 };
