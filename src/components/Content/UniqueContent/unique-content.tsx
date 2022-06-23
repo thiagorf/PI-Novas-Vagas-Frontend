@@ -59,7 +59,7 @@ export const UniqueContent = () => {
     if (error) {
         return <div>{error}</div>;
     }
-
+    // check if the auth user already applied
     return (
         <>
             <SideBarWrapper>

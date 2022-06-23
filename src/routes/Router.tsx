@@ -16,8 +16,8 @@ function Router() {
             <Route element={<PageLayout />}>
                 <Route path="/" element={<Main />} />
                 <Route path="/job/:id" element={<UniqueContent />} />
+                <Route path="/applied-jobs" element={<ProtectedRoute Component={ApplicantJobs} role="applicant" />} />
             </Route>
-            <Route path="/applied-jobs" element={<ProtectedRoute Component={ApplicantJobs} role="applicant" />} />
             <Route path="/protected" element={<ProtectedRoute Component={Wrapper} role="enterprise" />} />
             <Route path="/create-job" element={<ProtectedRoute Component={CreateJob} role="enterprise" />} />
             <Route path="/enterprise-jobs" element={<ProtectedRoute Component={EnterpriseJobs} role="enterprise" />} />

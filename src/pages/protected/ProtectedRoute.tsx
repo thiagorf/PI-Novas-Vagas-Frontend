@@ -11,7 +11,7 @@ interface ProtectedProps {
 export const ProtectedRoute = ({ Component, role }: ProtectedProps) => {
     const [isValidToken, setIsValidToken] = useState(false);
     const [loading, setLoading] = useState(true);
-    const { user, logout } = useAuth();
+    const { user } = useAuth();
 
     useEffect(() => {
         async function checkJWT() {
@@ -20,9 +20,10 @@ export const ProtectedRoute = ({ Component, role }: ProtectedProps) => {
             setIsValidToken(response.data.ok);
             setLoading(false);
         }
-
-        checkJWT();
-    }, []);
+        if (user) {
+            checkJWT();
+        }
+    }, [user]);
 
     if (loading) {
         return <div>Loading....</div>;
@@ -32,6 +33,6 @@ export const ProtectedRoute = ({ Component, role }: ProtectedProps) => {
         return <Component />;
     }
 
-    logout();
+    // logout();
     return <Navigate to="/" replace />;
 };
