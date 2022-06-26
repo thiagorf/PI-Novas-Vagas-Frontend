@@ -1,0 +1,17 @@
+.users-content {
+    width: 100%;
+    height: 100%;
+}
+
+.users-content h1 {
+    width: 1134px;
+    margin: 85px auto 48px auto;
+}
+
+.user-data {
+    display: grid;
+    grid-template-columns: repeat(4, 258px);
+    gap: 71px 34px;
+    width: fit-content;
+    margin: 0 auto;
+}

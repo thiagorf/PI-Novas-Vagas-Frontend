@@ -3,9 +3,11 @@ import { ContentItem, ContentWrapper } from ".";
 import { JobsData } from "../../../types";
 import api from "../../../services/api";
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 export const ContentList = () => {
     const [jobs, setJobs] = useState<JobsData[]>([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function getContent() {
@@ -20,7 +22,7 @@ export const ContentList = () => {
         <ContentWrapper>
             <div className="jobs-wrapper">
                 {jobs.map((job) => (
-                    <ContentItem {...job} key={job.id} />
+                    <ContentItem job={job} key={job.id} action={() => navigate(`/job/${job.id}`)} />
                 ))}
             </div>
         </ContentWrapper>

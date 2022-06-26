@@ -16,7 +16,7 @@ export const EnterpriseLogin = () => {
 
     const attemptEnterpriseLogin: SubmitHandler<EnterpriseLoginProps> = async (data) => {
         await login(data);
-        navigate("/protected");
+        navigate("/enterprise-jobs");
     };
 
     return (

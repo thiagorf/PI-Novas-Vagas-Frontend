@@ -1,1 +1,2 @@
-export * from "./left-icon-text";
+export * from "./icon";
+export * from "./UserContent";

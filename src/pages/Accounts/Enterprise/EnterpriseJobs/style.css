@@ -1,0 +1,14 @@
+.one-job-info {
+    /*margin-top: 132px;*/
+    width: 100%;
+    height: 100%;
+}
+
+.cards-separator {
+    height: 328px;
+    overflow-y: scroll;
+}
+
+#card-title {
+    margin-bottom: 34px;
+}

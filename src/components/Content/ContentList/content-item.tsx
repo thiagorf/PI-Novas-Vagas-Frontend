@@ -1,15 +1,14 @@
-import { useNavigate } from "react-router-dom";
 import { JobsData } from "../../../types";
 import { DateFomat } from "../../../util";
 
-export const ContentItem = (job: JobsData) => {
-    const navigate = useNavigate();
-    const showMoreAboutAJob = (id: number) => {
-        navigate(`/job/${id}`);
-    };
+interface ContentData {
+    job: JobsData;
+    action: () => void;
+}
 
+export const ContentItem = ({ job, action }: ContentData) => {
     return (
-        <div className="job-card" onClick={() => showMoreAboutAJob(job.id)}>
+        <div className="job-card" onClick={action}>
             <h4>{job.title}</h4>
             <p data-title={`${job.enterprise.name}, ${job.address}`} className="job-subtitle">
                 {job.enterprise.name},{job.address}

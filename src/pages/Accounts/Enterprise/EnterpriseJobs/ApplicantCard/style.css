@@ -1,0 +1,28 @@
+.applicant-card-wrapper {
+    display: flex;
+    width: 262px;
+    align-items: center;
+    margin-bottom: 17.5px;
+}
+
+.applicant-card-photo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    margin-right: 4px;
+}
+
+.applicant-card-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.applicant-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 220px;
+    border-bottom: 0.5px solid hsla(0, 0%, 26%, 0.75);
+}

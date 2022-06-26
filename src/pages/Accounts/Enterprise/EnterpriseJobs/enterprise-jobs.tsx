@@ -1,10 +1,15 @@
 import { useQuery } from "react-query";
+import { useNavigate } from "react-router-dom";
+import { ContentItem } from "../../../../components";
+import { UsersContent } from "../../../../components/Aligment";
 import { useAuth } from "../../../../hooks/useAuth";
 import api from "../../../../services/api";
+import { AllEnterpriseJobs } from "./types";
 
 export const EnterpriseJobs = () => {
+    const navigate = useNavigate();
     const { user } = useAuth();
-    const { data, error, isLoading } = useQuery("enterprise-jobs", async () => {
+    const { data, error, isLoading } = useQuery<AllEnterpriseJobs>("enterprise-jobs", async () => {
         const response = await api.get(`/v1/enterprises/${user.id}/jobs`);
 
         return response.data;
@@ -18,5 +23,11 @@ export const EnterpriseJobs = () => {
         return <div>Loading...</div>;
     }
 
-    return <div>{JSON.stringify(data)}</div>;
+    return (
+        <UsersContent title="Vagas Criadas">
+            {data.jobs.map((job) => (
+                <ContentItem job={job} key={job.id} action={() => navigate(`/enterprise-one-job/${job.id}`)} />
+            ))}
+        </UsersContent>
+    );
 };
