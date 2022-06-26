@@ -31,9 +31,9 @@ function Router() {
                     path="/enterprise-one-job/:id"
                     element={<ProtectedRoute Component={EnterpriseOneJob} role="enterprise" />}
                 />
+                <Route path="/create-job" element={<ProtectedRoute Component={CreateJob} role="enterprise" />} />
             </Route>
             <Route path="/protected" element={<ProtectedRoute Component={Wrapper} role="enterprise" />} />
-            <Route path="/create-job" element={<ProtectedRoute Component={CreateJob} role="enterprise" />} />
         </Routes>
     );
 }

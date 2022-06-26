@@ -29,15 +29,20 @@ export const EnterpriseOneJob = () => {
             <SideBarWrapper>
                 <h3 id="card-title">Candidatos interessados</h3>
                 <div className="cards-separator">
-                    {/* data.applicants.map((applicant, index) => (
+                    {data.applicants.map((applicant, index) => (
                         <ApplicantCard {...applicant} key={index} />
-                    ))*/}
-                    <ApplicantCard {...data.applicants[0]} />
+                    ))}
                 </div>
             </SideBarWrapper>
 
             <ContentWrapper>
-                <h2>asa</h2>
+                <div className="enterprise-one-content-information">
+                    <h2>{data.title}</h2>
+                    <h3>
+                        {user.name}, {data.address}
+                    </h3>
+                    <p>{data.description}</p>
+                </div>
             </ContentWrapper>
         </>
     );

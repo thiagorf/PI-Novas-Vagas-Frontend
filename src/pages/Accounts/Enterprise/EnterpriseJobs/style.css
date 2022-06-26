@@ -12,3 +12,20 @@
 #card-title {
     margin-bottom: 34px;
 }
+
+.enterprise-one-content-information {
+    width: 851px;
+    height: 100%;
+    margin: 83px auto 0 auto;
+}
+
+.enterprise-one-content-information h2 {
+    margin-bottom: -14px;
+    font-weight: 700;
+}
+
+.enterprise-one-content-information h3 {
+    font-weight: 400;
+    margin-bottom: 41px;
+    color: var(--base-color);
+}
