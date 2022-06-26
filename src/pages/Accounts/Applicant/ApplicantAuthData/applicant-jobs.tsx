@@ -4,9 +4,11 @@ import { useAuth } from "../../../../hooks/useAuth";
 import { AllApplicantJobs } from "./types";
 import api from "../../../../services/api";
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 export const ApplicantJobs = () => {
     const { user } = useAuth();
+    const navigate = useNavigate();
     const { data, isError, error, isLoading } = useQuery<AllApplicantJobs>("applicant-jobs", async () => {
         const response = await api.get(`/v1/applicants/${user.id}/jobs`);
 
@@ -27,7 +29,7 @@ export const ApplicantJobs = () => {
 
             <div className="user-jobs">
                 {data.jobs.map((job) => (
-                    <ContentItem {...job} key={job.id} />
+                    <ContentItem action={() => navigate(`/applicant-job/${job.id}`)} job={job} key={job.id} />
                 ))}
             </div>
         </div>

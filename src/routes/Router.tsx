@@ -12,6 +12,7 @@ import { ProtectedRoute, Wrapper } from "../pages/protected";
 import { PageLayout } from "./PageLayout";
 import { Main } from "../pages/Main";
 import { SecuretedLayout } from "./SecuredLayout";
+import { ApplicantOneJob } from "../pages/Accounts/Applicant/ApplicantAuthData/applicant-one-job";
 
 function Router() {
     return (
@@ -24,6 +25,7 @@ function Router() {
                 <Route path="/" element={<Main />} />
                 <Route path="/job/:id" element={<UniqueContent />} />
                 <Route path="/applied-jobs" element={<ProtectedRoute Component={ApplicantJobs} role="applicant" />} />
+                <Route path="/applicant-job/:id" element={<ApplicantOneJob />} />
             </Route>
             <Route element={<SecuretedLayout />}>
                 <Route
