@@ -25,9 +25,15 @@ export const EnterpriseJobs = () => {
 
     return (
         <UsersContent title="Vagas Criadas">
-            {data.jobs.map((job) => (
-                <ContentItem job={job} key={job.id} action={() => navigate(`/enterprise-one-job/${job.id}`)} />
-            ))}
+            {data.jobs.length === 0 ? (
+                <p>Não possui vagas criadas.</p>
+            ) : (
+                <>
+                    {data.jobs.map((job) => (
+                        <ContentItem job={job} key={job.id} action={() => navigate(`/enterprise-one-job/${job.id}`)} />
+                    ))}
+                </>
+            )}
         </UsersContent>
     );
 };

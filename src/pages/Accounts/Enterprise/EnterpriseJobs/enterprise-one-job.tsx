@@ -29,9 +29,15 @@ export const EnterpriseOneJob = () => {
             <SideBarWrapper>
                 <h3 id="card-title">Candidatos interessados</h3>
                 <div className="cards-separator">
-                    {data.applicants.map((applicant, index) => (
-                        <ApplicantCard {...applicant} key={index} />
-                    ))}
+                    {data.applicants.length === 0 ? (
+                        <p>Nenhum candidato interessado até o momento</p>
+                    ) : (
+                        <>
+                            {data.applicants.map((applicant, index) => (
+                                <ApplicantCard {...applicant} key={index} />
+                            ))}
+                        </>
+                    )}
                 </div>
             </SideBarWrapper>
 

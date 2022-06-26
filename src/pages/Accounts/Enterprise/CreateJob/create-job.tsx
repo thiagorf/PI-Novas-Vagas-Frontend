@@ -1,4 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { FormActButton, FormInput, FormInputGroup } from "../../../../components";
 import api from "../../../../services/api";
 import { CreateJobData } from "./create-job-types";
@@ -15,6 +16,8 @@ export const CreateJob = () => {
         formState: { errors },
     } = useForm<CreateJobData>();
 
+    const navigate = useNavigate();
+
     const formatToIsoString = (date: string) => {
         return new Date(date).toISOString();
     };
@@ -23,7 +26,8 @@ export const CreateJob = () => {
         // eslint-disable-next-line camelcase
         const formatedData: CreateJobData = { ...data, ends_at: formatToIsoString(data.ends_at) };
         const response = await api.post("/v1/jobs", formatedData);
-        console.log(response.data);
+
+        navigate("/enterprise-jobs");
     };
 
     return (

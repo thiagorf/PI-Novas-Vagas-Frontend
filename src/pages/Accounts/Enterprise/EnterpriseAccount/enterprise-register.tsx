@@ -26,7 +26,7 @@ export const EnterpriseRegister = () => {
     const { steps, setQuantity, handleNextStep, handlePrevStep } = useFormSteps();
 
     const attemptEnterpriseRegister: SubmitHandler<EnterpriseRegisterProps> = async (data) => {
-        const response = await api.post("/v1/enterprises", data);
+        const response = await api.post("/v1/enterprises", { ...data, cep: Number(data.cep) });
         console.log(response.data);
         navigate("/");
     };
@@ -61,6 +61,7 @@ export const EnterpriseRegister = () => {
                     <>
                         <PrevButton handlePrevStep={handlePrevStep} />
                         <FormInput
+                            inputType="number"
                             label="Cep"
                             {...register("cep", { required: "Cep is required" })}
                             errors={errors.cep}
