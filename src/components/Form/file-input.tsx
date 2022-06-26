@@ -1,7 +1,15 @@
-import { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
+import { UseFormRegisterReturn, RefCallBack, FieldError } from "react-hook-form";
 import { RiFileAddLine, RiFileUploadLine } from "react-icons/ri";
 
-export const FileInput = () => {
+interface CustomFileBehavior extends UseFormRegisterReturn {
+    errors: FieldError;
+}
+
+export const FileInput = React.forwardRef(function FileInput(
+    { errors, name, onChange, onBlur }: CustomFileBehavior,
+    ref: RefCallBack,
+) {
     const [imageSrc, setImageSrc] = useState("");
 
     const showPreview = (e: ChangeEvent<HTMLInputElement>) => {
@@ -15,10 +23,19 @@ export const FileInput = () => {
             <div className="avatar-img">
                 {imageSrc ? <img src={imageSrc} alt="foto do usuário" /> : <RiFileAddLine />}
             </div>
-            <label htmlFor="file">
+            <label htmlFor={name}>
                 carregar foto <RiFileUploadLine size={16} className="align-icon" />
             </label>
-            <input type="file" id="file" onChange={showPreview} />
+            <input
+                type="file"
+                id={name}
+                onInput={showPreview}
+                name={name}
+                onChange={onChange}
+                onBlur={onBlur}
+                ref={ref}
+            />
+            {errors && <p className="input-field-error">{errors.message}</p>}
         </div>
     );
-};
+});
