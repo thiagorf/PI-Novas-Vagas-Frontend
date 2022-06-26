@@ -1,0 +1,20 @@
+.create-job-wrapper {
+    width: 100%;
+    margin: 78px;
+}
+
+.create-job-wrapper form {
+    width: 735px;
+    margin: 0 auto;
+}
+
+.create-job-separator {
+    display: flex;
+    width: 445px;
+}
+
+.create-job-separator .input-field:first-child {
+    margin-right: 88px;
+}
+
+/*735*/

@@ -1,6 +1,12 @@
 import { SubmitHandler, useForm } from "react-hook-form";
+import { FormActButton, FormInput, FormInputGroup } from "../../../../components";
 import api from "../../../../services/api";
 import { CreateJobData } from "./create-job-types";
+import "./style.css";
+
+const fullWidth = {
+    width: "100%",
+};
 
 export const CreateJob = () => {
     const {
@@ -21,36 +27,40 @@ export const CreateJob = () => {
     };
 
     return (
-        <div>
+        <div className="create-job-wrapper">
             <form onSubmit={handleSubmit(attemptCreateJob)}>
-                <div>
-                    <div>
-                        <label htmlFor="title">Title</label>
-                        <input type="text" {...register("title", { required: true })} />
-                        {errors.title && <p>{errors.title.message}</p>}
+                <FormInputGroup style={fullWidth}>
+                    <h1>Criar vaga</h1>
+                    <FormInput
+                        label="Titulo"
+                        {...register("title", { required: "Title is required" })}
+                        errors={errors.title}
+                    />
+                    <FormInput
+                        label="Endereço"
+                        {...register("address", { required: "Address is required" })}
+                        errors={errors.address}
+                    />
+                    <div className="create-job-separator">
+                        <FormInput
+                            label="Salario"
+                            {...register("salary", { required: "Salary is required" })}
+                            errors={errors.salary}
+                        />
+                        <FormInput
+                            inputType="date"
+                            label="Termina em"
+                            {...register("ends_at", { required: "Ends at is required" })}
+                            errors={errors.ends_at}
+                        />
                     </div>
-                    <div>
-                        <label htmlFor="salary">Salary</label>
-                        <input type="text" {...register("salary", { required: true })} />
-                        {errors.salary && <p>{errors.salary.message}</p>}
-                    </div>
-                    <div>
-                        <label htmlFor="address">Address</label>
-                        <input type="text" {...register("address", { required: true })} />
-                        {errors.address && <p>{errors.address.message}</p>}
-                    </div>
-                    <div>
-                        <label htmlFor="description">Description</label>
-                        <input type="text" {...register("description", { required: true })} />
-                        {errors.description && <p>{errors.description.message}</p>}
-                    </div>
-                    <div>
-                        <label htmlFor="ends_at">Ends at</label>
-                        <input type="date" {...register("ends_at", { required: true })} />
-                        {errors.ends_at && <p>{errors.ends_at.message}</p>}
-                    </div>
-                </div>
-                <button type="submit">Create Job</button>
+                    <FormInput
+                        label="Descrição"
+                        {...register("description", { required: "Description is required" })}
+                        errors={errors.description}
+                    />
+                </FormInputGroup>
+                <FormActButton buttonLabel="Criar vaga" />
             </form>
         </div>
     );
