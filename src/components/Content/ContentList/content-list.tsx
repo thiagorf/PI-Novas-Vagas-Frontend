@@ -1,27 +1,30 @@
-import { useEffect, useState } from "react";
 import { ContentItem, ContentWrapper } from ".";
 import { JobsData } from "../../../types";
-import api from "../../../services/api";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
+import { useGetJobs } from "../../../hooks/useGetJobs";
 
 export const ContentList = () => {
-    const [jobs, setJobs] = useState<JobsData[]>([]);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        async function getContent() {
-            const response = await api.get("/v1/jobs");
+    // const { data, isLoading, isError, error } = useQuery<JobsData[], Error>("jobs-content", () => fetchJobs());
 
-            setJobs(response.data);
-        }
-        getContent();
-    }, []);
+    const {
+        query: { data, isError, error, isLoading },
+    } = useGetJobs<JobsData[], Error>();
+
+    if (isLoading) {
+        return <div>Loading....</div>;
+    }
+
+    if (isError) {
+        return <div>Error: {error.message}</div>;
+    }
 
     return (
         <ContentWrapper>
             <div className="jobs-wrapper">
-                {jobs.map((job) => (
+                {data.map((job) => (
                     <ContentItem job={job} key={job.id} action={() => navigate(`/job/${job.id}`)} />
                 ))}
             </div>
