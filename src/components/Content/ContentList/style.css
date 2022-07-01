@@ -1,11 +1,18 @@
 .jobs-wrapper {
-    display: grid;
+    /*
     grid-template-columns: repeat(3, 258px);
+    */
+    /*
+    width: 852px;
+    */
+    display: grid;
+    grid-template-columns: clamp(300px, 80%, 380px);
     column-gap: 40px;
     row-gap: 33px;
-    width: 852px;
+    justify-content: center;
     margin: 85px auto 0 auto;
 }
+
 .job-card {
     display: flex;
     flex-direction: column;
@@ -80,4 +87,16 @@ Inconsistent
 
 .job-card:hover .job-cta {
     width: 74px;
+}
+
+@media only screen and (min-width: 768px) {
+    .jobs-wrapper {
+        grid-template-columns: repeat(2, 300px);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .jobs-wrapper {
+        grid-template-columns: repeat(3, 258px);
+    }
 }

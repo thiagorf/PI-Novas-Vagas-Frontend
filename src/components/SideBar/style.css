@@ -1,11 +1,23 @@
 .sidebar {
     /*width: 25%;*/
-    width: 407px;
+    /*width: 407px;
+    
     border-right: 2.5px solid var(--brand-color);
+    */
+    grid-area: sidebar;
+}
+
+@media only screen and (min-width: 1200px) {
+    .sidebar {
+        border-right: 2.5px solid var(--brand-color);
+    }
 }
 
 .sidebar-content-wrapper {
-    width: 317px;
+    /*width: 317px;*/
+    min-width: 320px;
+    width: 80%;
+    max-width: 380px;
     margin: 85px auto 0 auto;
 }
 

@@ -6,9 +6,9 @@ export const PageLayout = () => {
     return (
         <>
             <CommonHeader />
-            <MainWrapper>
+            <>
                 <Outlet />
-            </MainWrapper>
+            </>
         </>
     );
 };
