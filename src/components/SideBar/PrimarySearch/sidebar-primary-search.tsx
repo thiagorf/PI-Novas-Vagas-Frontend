@@ -1,4 +1,5 @@
 import { SideBarSearchInput, SideBarSelect } from ".";
+import "./style.css";
 
 export const SideBarPrimarySearch = () => {
     return (

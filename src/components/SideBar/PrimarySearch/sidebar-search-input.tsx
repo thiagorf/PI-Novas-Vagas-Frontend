@@ -1,7 +1,6 @@
 import { useFormContext } from "react-hook-form";
 import { RiSearchLine } from "react-icons/ri";
 import { QQuery } from "../types";
-import "./style.css";
 
 export const SideBarSearchInput = () => {
     const { register } = useFormContext<QQuery>();

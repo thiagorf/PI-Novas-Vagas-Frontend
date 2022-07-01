@@ -8,10 +8,10 @@ interface PopUpOptionProps {
 
 export const PopUpOption = ({ icon, action, message }: PopUpOptionProps) => {
     return (
-        <div className="popup-row-wrapper">
+        <div className="popup-row-wrapper" onClick={action}>
             <div className="popup-icon">{icon}</div>
             <div className="popup-text">
-                <p onClick={action}>{message}</p>
+                <p>{message}</p>
             </div>
         </div>
     );

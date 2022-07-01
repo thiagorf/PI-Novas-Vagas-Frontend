@@ -9,13 +9,21 @@ interface DefaultHeaderProps {
 }
 
 export const DefaultHeader = ({ Component }: DefaultHeaderProps) => {
-    const { signed } = useAuth();
+    const { signed, user } = useAuth();
 
     const navigate = useNavigate();
 
+    const handleRedirect = () => {
+        if (user.type === "enterprise") {
+            navigate("/enterprise-jobs");
+        }
+
+        navigate("/");
+    };
+
     return (
         <div className="header">
-            <h3 onClick={() => navigate("/")}>Novas Vagas</h3>
+            <h3 onClick={handleRedirect}>Novas Vagas</h3>
             {signed ? <Component /> : <LoginPopUp />}
         </div>
     );

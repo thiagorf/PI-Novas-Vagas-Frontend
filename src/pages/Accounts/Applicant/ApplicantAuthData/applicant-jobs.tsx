@@ -2,9 +2,9 @@ import { useQuery } from "react-query";
 import { ContentItem } from "../../../../components";
 import { useAuth } from "../../../../hooks/useAuth";
 import { AllApplicantJobs } from "./types";
+import { useNavigate } from "react-router-dom";
 import api from "../../../../services/api";
 import "./style.css";
-import { useNavigate } from "react-router-dom";
 
 export const ApplicantJobs = () => {
     const { user } = useAuth();
@@ -26,12 +26,15 @@ export const ApplicantJobs = () => {
     return (
         <div className="user-jobs-wrapper">
             <h1>Vagas Cadastradas</h1>
-
-            <div className="user-jobs">
-                {data.jobs.map((job) => (
-                    <ContentItem action={() => navigate(`/applicant-job/${job.id}`)} job={job} key={job.id} />
-                ))}
-            </div>
+            {data.jobs.length === 0 ? (
+                <p>Não possui vagas cadastradas.</p>
+            ) : (
+                <div className="user-jobs">
+                    {data.jobs.map((job) => (
+                        <ContentItem action={() => navigate(`/applicant-job/${job.id}`)} job={job} key={job.id} />
+                    ))}
+                </div>
+            )}
         </div>
     );
 };

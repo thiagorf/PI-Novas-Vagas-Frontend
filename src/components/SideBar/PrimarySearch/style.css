@@ -25,14 +25,45 @@
 }
 
 .sidebar-select {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     position: relative;
     height: 37px;
     width: 155px;
+    padding-right: 0.35em;
     border: 1px solid var(--auxiliary-color);
     border-radius: 7px;
+
+    display: grid;
+    grid-template-areas: "select";
+    position: relative;
+    align-items: center;
+}
+
+.sidebar-select::after {
+    content: "";
+    width: 0.8em;
+    height: 0.5em;
+    background-color: #777;
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    justify-self: end;
+}
+
+select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    z-index: 1;
+}
+
+select,
+.sidebar-select::after {
+    grid-area: select;
 }
 
 .sidebar-select-label {
