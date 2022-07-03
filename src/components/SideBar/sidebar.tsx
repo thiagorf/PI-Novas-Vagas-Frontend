@@ -4,11 +4,16 @@ import { QueryStringOptions } from "./types";
 import { JobsData } from "../../types";
 import { useGetJobs } from "../../hooks/useGetJobs";
 import "./style.css";
+import { useWindowDimensions } from "../../hooks/useWindowDimensions";
+import { useToggle } from "../../hooks";
 
 export const SideBar = () => {
+    const { toggle, handleToggle } = useToggle();
     const {
         contentContext: { setQueryString },
     } = useGetJobs<JobsData[], Error>();
+
+    const { width } = useWindowDimensions();
 
     const methods = useForm<QueryStringOptions>({
         defaultValues: {
@@ -28,16 +33,24 @@ export const SideBar = () => {
 
     return (
         <SideBarWrapper>
-            <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit(filterContent)}>
-                    <SideBarPrimarySearch />
-                    <SideBarSecondarySearch />
-                    <SideBarTerciarySearch />
-                    <button type="submit" className="sidebar-cta">
-                        Pesquisar
-                    </button>
-                </form>
-            </FormProvider>
+            {width < 1200 && (
+                <button onClick={handleToggle} className="filter-button">
+                    Mostrar Filtro
+                </button>
+            )}
+
+            {(width > 1200 || toggle) && (
+                <FormProvider {...methods}>
+                    <form onSubmit={methods.handleSubmit(filterContent)}>
+                        <SideBarPrimarySearch />
+                        <SideBarSecondarySearch />
+                        <SideBarTerciarySearch />
+                        <button type="submit" className="sidebar-cta">
+                            Pesquisar
+                        </button>
+                    </form>
+                </FormProvider>
+            )}
         </SideBarWrapper>
     );
 };

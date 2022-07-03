@@ -130,3 +130,13 @@
     padding-left: 4px;
     font-weight: 300;
 }
+
+.filter-button {
+    width: 100%;
+    background-color: var(--brand-color);
+    border: 1px solid var(--auxiliary-color);
+    border-radius: 4px;
+    height: 36px;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}

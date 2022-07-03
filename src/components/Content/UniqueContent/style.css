@@ -1,3 +1,23 @@
+.containerx {
+    grid-template-areas:
+        "header"
+        "content"
+        "sidebar";
+}
+
+.unique-sidebar {
+    /*nao precisa*/
+    /*grid-area: sidebar;*/
+    grid-row: 3/4;
+}
+
+.unique-content {
+    /*grid-area: content;*/
+    grid-row: 2/3;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
 .job-info-wrapper {
     margin-bottom: 26px;
 }
@@ -6,8 +26,12 @@
 }
 
 .job-sidebar-cta {
+    display: block;
     width: 100%;
-    height: 37px;
+    max-width: 407px;
+    /*37*/
+    height: 45px;
+    margin: 0 auto;
     border: 1px solid var(--auxiliary-color);
     border-radius: 7px;
     background-color: var(--brand-color);
@@ -16,7 +40,7 @@
 }
 
 .one-job-content {
-    width: 851px;
+    /*width: 851px;*/
     height: 100%;
     margin: 83px auto 0 auto;
 }
@@ -28,4 +52,41 @@
 .one-job-content h3 {
     font-weight: 400;
     margin-bottom: 41px;
+}
+
+.unique-sidebar-wrapper,
+.one-job-content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .unique-sidebar-separator {
+        display: flex;
+        gap: 15px;
+        justify-content: space-between;
+    }
+    .job-sidebar-cta {
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .unique-sidebar-separator {
+        display: block;
+        gap: 0;
+    }
+    .job-sidebar-cta {
+        margin: 0 auto;
+    }
+
+    .unique-content {
+        grid-area: content;
+        padding-top: 83px;
+    }
+    .unique-sidebar {
+        grid-area: sidebar;
+        border-right: 2.5px solid var(--brand-color);
+        padding-top: 83px;
+    }
 }

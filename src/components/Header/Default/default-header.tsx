@@ -14,7 +14,7 @@ export const DefaultHeader = ({ Component }: DefaultHeaderProps) => {
     const navigate = useNavigate();
 
     const handleRedirect = () => {
-        if (user.type === "enterprise") {
+        if (signed && user.type === "enterprise") {
             navigate("/enterprise-jobs");
         }
 

@@ -62,37 +62,44 @@ export const UniqueContent = () => {
     // check if the auth user already applied
     return (
         <>
-            <SideBarWrapper>
-                <div className="job-info-wrapper job-header-info">
-                    <h3>Informações adicionais</h3>
-                    <div>
-                        <LeftIconText icon={RiCalendarEventLine}>Postado em {DateFomat(data.started_at)}</LeftIconText>
-                        <LeftIconText icon={RiMoneyDollarCircleLine}>
-                            Salário de {currencyFormat(data.salary)}
-                        </LeftIconText>
-                        <LeftIconText icon={RiMapPin2Line}>{data.address}</LeftIconText>
+            <div className="unique-sidebar">
+                <div className="unique-sidebar-wrapper">
+                    <div className="unique-sidebar-separator">
+                        <div className="job-info-wrapper job-header-info">
+                            <h3>Informações adicionais</h3>
+                            <div>
+                                <LeftIconText icon={RiCalendarEventLine}>
+                                    Postado em {DateFomat(data.started_at)}
+                                </LeftIconText>
+                                <LeftIconText icon={RiMoneyDollarCircleLine}>
+                                    Salário de {currencyFormat(data.salary)}
+                                </LeftIconText>
+                                <LeftIconText icon={RiMapPin2Line}>{data.address}</LeftIconText>
+                            </div>
+                        </div>
+                        <div className="job-info-wrapper">
+                            <h3>Siga {data.enterprise.name}</h3>
+                            <div>
+                                <LeftIconText icon={RiLinkedinBoxLine}>aaaa</LeftIconText>
+                                <LeftIconText icon={RiFacebookBoxLine}>aaaa</LeftIconText>
+                                <LeftIconText icon={RiTwitterLine}>aa</LeftIconText>
+                            </div>
+                        </div>
+                        <div className="job-info-wrapper">
+                            <h3>Contatos</h3>
+                            <div>
+                                <LeftIconText icon={RiPhoneLine}>4154154</LeftIconText>
+                                <LeftIconText icon={RiMailLine}>asdas</LeftIconText>
+                            </div>
+                        </div>
                     </div>
+                    <button className="job-sidebar-cta" onClick={applyToAJob}>
+                        Se candidatar
+                    </button>
                 </div>
-                <div className="job-info-wrapper">
-                    <h3>Siga {data.enterprise.name}</h3>
-                    <div>
-                        <LeftIconText icon={RiLinkedinBoxLine}>aaaa</LeftIconText>
-                        <LeftIconText icon={RiFacebookBoxLine}>aaaa</LeftIconText>
-                        <LeftIconText icon={RiTwitterLine}>aa</LeftIconText>
-                    </div>
-                </div>
-                <div className="job-info-wrapper">
-                    <h3>Contatos</h3>
-                    <div>
-                        <LeftIconText icon={RiPhoneLine}>4154154</LeftIconText>
-                        <LeftIconText icon={RiMailLine}>asdas</LeftIconText>
-                    </div>
-                </div>
-                <button className="job-sidebar-cta" onClick={applyToAJob}>
-                    Se candidatar
-                </button>
-            </SideBarWrapper>
-            <ContentWrapper>
+            </div>
+
+            <div className="unique-content">
                 <div className="one-job-content">
                     <h2>{data.title}</h2>
                     <h3>
@@ -100,7 +107,7 @@ export const UniqueContent = () => {
                     </h3>
                     <p>{data.description}</p>
                 </div>
-            </ContentWrapper>
+            </div>
         </>
     );
 };
