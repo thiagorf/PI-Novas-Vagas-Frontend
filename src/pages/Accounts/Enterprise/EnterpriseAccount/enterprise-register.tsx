@@ -39,18 +39,18 @@ export const EnterpriseRegister = () => {
                         <h1>Create an Account</h1>
                         <FormInput
                             label="Nome"
-                            {...register("name", { required: "Name is required" })}
+                            {...register("name", { required: "Nome é obrigatório" })}
                             errors={errors.name}
                         />
                         <FormInput
                             label="Email"
-                            {...register("email", { required: "Email is required" })}
+                            {...register("email", { required: "Email é obrigatório" })}
                             errors={errors.email}
                         />
                         <FormInput
                             label="Senha"
                             inputType="password"
-                            {...register("password", { required: "Password is required" })}
+                            {...register("password", { required: "Senha é obrigatório" })}
                             errors={errors.password}
                         />
                         <span className="form-redirect">
@@ -63,17 +63,17 @@ export const EnterpriseRegister = () => {
                         <FormInput
                             inputType="number"
                             label="Cep"
-                            {...register("cep", { required: "Cep is required" })}
+                            {...register("cep", { required: "Cep é obrigatório" })}
                             errors={errors.cep}
                         />
                         <FormInput
                             label="CNPJ"
-                            {...register("cnpj", { required: "Cnpj is required" })}
+                            {...register("cnpj", { required: "Cnpj é obrigatório" })}
                             errors={errors.cnpj}
                         />
                         <FormInput
-                            label="Segment"
-                            {...register("segment", { required: "Segment is required" })}
+                            label="Segmento"
+                            {...register("segment", { required: "Segmento é obrigatório" })}
                             errors={errors.segment}
                         />
 

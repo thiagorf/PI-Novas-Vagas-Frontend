@@ -55,10 +55,10 @@ export const ApplicantRegister = () => {
                 <FormSteps steps={steps} setTotalSteps={setQuantity}>
                     <>
                         <h1>Criar uma conta</h1>
-                        <FileInput {...register("photo", { required: "Photo is Required" })} errors={errors.photo} />
+                        <FileInput {...register("photo", { required: "Foto é obrigatório" })} errors={errors.photo} />
                         <FormInput
-                            label="name"
-                            {...register("name", { required: "Name is required" })}
+                            label="Nome"
+                            {...register("name", { required: "Nome é obrigatório" })}
                             errors={errors.name}
                         />
                         <span className="form-redirect">
@@ -71,13 +71,13 @@ export const ApplicantRegister = () => {
                         <PrevButton handlePrevStep={handlePrevStep} />
                         <FormInput
                             label="email"
-                            {...register("email", { required: "Email is required" })}
+                            {...register("email", { required: "Email é obrigatório" })}
                             errors={errors.email}
                         />
                         <FormInput
                             inputType="password"
-                            label="password"
-                            {...register("password", { required: "Password is required" })}
+                            label="Senha"
+                            {...register("password", { required: "Senha é obrigatório" })}
                             errors={errors.password}
                         />
                         {/*
@@ -95,7 +95,7 @@ export const ApplicantRegister = () => {
                         <label htmlFor="curriculum">Carregar curriculo</label>
                         <input
                             type="file"
-                            {...register("curriculum", { required: "Curriculum é necessário" })}
+                            {...register("curriculum", { required: "Currículo é necessário" })}
                             id="curriculum"
                         />
                         {errors.curriculum && <p className="input-field-error">{errors.curriculum.message}</p>}

@@ -36,31 +36,31 @@ export const CreateJob = () => {
                 <FormInputGroup style={fullWidth}>
                     <h1>Criar vaga</h1>
                     <FormInput
-                        label="Titulo"
-                        {...register("title", { required: "Title is required" })}
+                        label="Título"
+                        {...register("title", { required: "Título é obrigatório" })}
                         errors={errors.title}
                     />
                     <FormInput
                         label="Endereço"
-                        {...register("address", { required: "Address is required" })}
+                        {...register("address", { required: "Endereço é obrigatório" })}
                         errors={errors.address}
                     />
                     <div className="create-job-separator">
                         <FormInput
                             label="Salario"
-                            {...register("salary", { required: "Salary is required" })}
+                            {...register("salary", { required: "Salário é obrigatório" })}
                             errors={errors.salary}
                         />
                         <FormInput
                             inputType="date"
                             label="Termina em"
-                            {...register("ends_at", { required: "Ends at is required" })}
+                            {...register("ends_at", { required: "Termina em é obrigatório" })}
                             errors={errors.ends_at}
                         />
                     </div>
                     <FormInput
                         label="Descrição"
-                        {...register("description", { required: "Description is required" })}
+                        {...register("description", { required: "Descrição é obrigatório" })}
                         errors={errors.description}
                     />
                 </FormInputGroup>

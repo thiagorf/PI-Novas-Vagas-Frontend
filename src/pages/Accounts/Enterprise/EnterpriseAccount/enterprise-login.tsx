@@ -25,13 +25,13 @@ export const EnterpriseLogin = () => {
                 <h1>Sign in</h1>
                 <FormInput
                     label="Email"
-                    {...register("email", { required: "Email is required" })}
+                    {...register("email", { required: "Email é obrigatório" })}
                     errors={errors.email}
                 />
                 <FormInput
                     inputType="password"
-                    label="password"
-                    {...register("password", { required: "Password is required" })}
+                    label="Senha"
+                    {...register("password", { required: "Senha é obrigatório" })}
                     errors={errors.password}
                 />
                 <span className="form-redirect">

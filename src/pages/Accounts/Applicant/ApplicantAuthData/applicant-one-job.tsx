@@ -80,16 +80,16 @@ export const ApplicantOneJob = () => {
                 <div className="job-info-wrapper">
                     <h3>Siga {data.enterprise.name}</h3>
                     <div>
-                        <LeftIconText icon={RiLinkedinBoxLine}>aaaa</LeftIconText>
-                        <LeftIconText icon={RiFacebookBoxLine}>aaaa</LeftIconText>
-                        <LeftIconText icon={RiTwitterLine}>aa</LeftIconText>
+                        <LeftIconText icon={RiLinkedinBoxLine}>{data.enterprise.name}</LeftIconText>
+                        <LeftIconText icon={RiFacebookBoxLine}>{data.enterprise.name}</LeftIconText>
+                        <LeftIconText icon={RiTwitterLine}>@{data.enterprise.name}</LeftIconText>
                     </div>
                 </div>
                 <div className="job-info-wrapper">
                     <h3>Contatos</h3>
                     <div>
-                        <LeftIconText icon={RiPhoneLine}>4154154</LeftIconText>
-                        <LeftIconText icon={RiMailLine}>asdas</LeftIconText>
+                        <LeftIconText icon={RiPhoneLine}>24 99999-9999</LeftIconText>
+                        <LeftIconText icon={RiMailLine}>{data.enterprise.email}</LeftIconText>
                     </div>
                 </div>
                 <button className="job-sidebar-cta" onClick={giveUp}>

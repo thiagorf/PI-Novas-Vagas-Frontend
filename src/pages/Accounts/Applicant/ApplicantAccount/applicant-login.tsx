@@ -31,13 +31,13 @@ export const ApplicantLogin = () => {
                 <h1>Fazer login</h1>
                 <FormInput
                     label="Email"
-                    {...register("email", { required: "Email is required" })}
+                    {...register("email", { required: "Email é obrigatório" })}
                     errors={errors.email}
                 />
                 <FormInput
                     inputType="password"
                     label="Senha"
-                    {...register("password", { required: "Password is required" })}
+                    {...register("password", { required: "Senha é obrigatório" })}
                     errors={errors.password}
                 />
                 <span className="form-redirect">
