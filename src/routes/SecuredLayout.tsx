@@ -6,9 +6,9 @@ export const SecuretedLayout = () => {
     return (
         <>
             <EnterpriseHeader />
-            <MainWrapper>
+            <>
                 <Outlet />
-            </MainWrapper>
+            </>
         </>
     );
 };

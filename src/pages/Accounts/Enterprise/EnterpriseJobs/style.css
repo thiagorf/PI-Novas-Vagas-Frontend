@@ -9,6 +9,24 @@
     overflow-y: scroll;
 }
 
+.unique-enterprise-applicants {
+    /*nao precisa*/
+    grid-area: sidebar;
+    min-width: 320px;
+    width: 80%;
+    max-width: 380px;
+    margin: 0 auto 0 auto;
+    padding-top: 85px;
+    /*grid-row: 3/4;*/
+}
+
+.unique-enterprise-content {
+    grid-area: content;
+    /*grid-row: 2/3;*/
+    /*padding-top: 20px;*/
+    margin-bottom: 20px;
+}
+
 #card-title {
     margin-bottom: 34px;
 }
@@ -28,4 +46,10 @@
     font-weight: 400;
     margin-bottom: 41px;
     color: var(--base-color);
+}
+
+@media only screen and (min-width: 1200px) {
+    .unique-enterprise-applicants {
+        border-right: 2.5px solid var(--brand-color);
+    }
 }

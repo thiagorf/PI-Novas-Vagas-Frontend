@@ -26,7 +26,7 @@ export const EnterpriseOneJob = () => {
 
     return (
         <>
-            <SideBarWrapper>
+            <div className="unique-enterprise-applicants">
                 <h3 id="card-title">Candidatos interessados</h3>
                 <div className="cards-separator">
                     {data.applicants.length === 0 ? (
@@ -39,9 +39,9 @@ export const EnterpriseOneJob = () => {
                         </>
                     )}
                 </div>
-            </SideBarWrapper>
+            </div>
 
-            <ContentWrapper>
+            <div className="unique-enterprise-content">
                 <div className="enterprise-one-content-information">
                     <h2>{data.title}</h2>
                     <h3>
@@ -49,7 +49,7 @@ export const EnterpriseOneJob = () => {
                     </h3>
                     <p>{data.description}</p>
                 </div>
-            </ContentWrapper>
+            </div>
         </>
     );
 };
